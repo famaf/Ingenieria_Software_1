@@ -1,0 +1,78 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Editar Perfil</title>
+    </head>
+
+    <body>
+        <div id="fondo">
+        <div id="page">
+             <header id="header">
+                    <div id="logo">
+                        <br><img src="{% static 'css/img/LogoPNG.png' %}" alt="FotoLogo" width="300" height="120"/>
+                    </div>
+                    <div id="top-nav">
+                        <ul>
+                        <li><a href="/confirm_logout/" class="action">Log Out</a></li>
+                        </ul>
+                    </div>
+                    <div class="clr"></div>
+            </header>
+
+            <br><div class="block_sup">
+                    <div class="block_sup-inner">
+                    <h1>Modificar datos de perfil</h1>
+                    <h3>{{ user.username|capfirst }}</h3>
+                    </div>
+                </div>
+
+            <div id="content">
+            <div id="content-inner">
+                    <main id="contentbar">
+                        <div class="article" style="font-size:17px">
+                            <form action="" method="POST" enctype="multipart/form-data" >{% csrf_token %}
+                                <p>Nombre: <input type="text" name="nombre" value="{{nombre.value}}"></p>
+                                <p>Apellido: <input type="text" name="apellido" value="{{apellido.value}}"></p>
+                                <p>Edad: <input type="text" name="edad" value="{{edad.value}}"></p>
+                                <p>Telefono: <input type="text" name="telefono" value="{{telefono.value}}"></p>
+                                <p>Pais: <input type="text" name="pais" value="{{pais.value}}"></p>
+                                <p>Provincia: <input type="text" name="provincia" value="{{provincia.value}}"></p>
+                                <p>Ciudad: <input type="text" name="ciudad" value="{{ciudad.value}}"></p>
+                                <p>Direccion: <input type="text" name="direccion" value="{{direccion.value}}"></p>
+                                <p>Mail: <input type="text" name="mail" value="{{mail.value}}"></p>
+                                <p>Estado Civil: <input type="text" name="estado_Civil" value="{{estado_Civil.value}}"></p>
+                                <p>Facebook: <input type="text" name="facebook" value="{{facebook.value}}"></p>
+                                <input type="submit" class="action" value="Guardar cambios">
+                            </form>
+                            <br><a href="/modificar_privacidad/" class="action">Modificar privacidad</a>
+                        </div>
+                    </main>
+
+                    <nav id="sidebar">
+                        <div class="widget">
+                            <ul>
+                            <a href="../" class="action">Inicio</a><br>
+                            <br><a href="/ver_perfil/" class="action">Ver Perfil</a><br>
+                            <br><a href="/editar_perfil/" class="action">Editar Perfil</a><br>
+                            <br><a href="/cambiar_password/" class="action">Cambiar Password</a><br>
+                            <br><a href="/fotos/subir_foto/" class="action">Subir Foto</a><br>
+                            <br><a href="/fotos/buscar_foto/" class="action">Buscar Fotos</a><br>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="clr"></div>
+                </div>
+            </div>
+
+            <div id="block_inf">
+                <div id="block_inf-inner">
+                  <h4>FotoLink&reg - Copyright&copy Todos los derechos reservados 2015-2065.</h4>
+                </div>
+            </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Modificar privacidad</title>
+        
+    </head>
+
+    <body>
+        <div id="fondo">
+        <div id="page">
+            <header id="header">
+                <div id="header-inner"> 
+                    <div id="logo">
+                        <br><img src="{% static 'css/img/LogoPNG.png' %}" alt="FotoLogo" width="300" height="120"/>
+                    </div>
+                    <div id="top-nav">
+                        <ul>
+                        <li><a href="/confirm_logout/" class="action">Log Out</a></li>
+                        </ul>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+            </header>
+
+            <br><div class="block_sup">
+                    <div class="block_sup-inner">
+                    <h1>Modificar privacidad</h1>
+                    </div>
+                </div>
+
+            <div id="content">
+            <div id="content-inner">
+                    <main id="contentbar">
+                        <div class="article">
+                            <h2 style="color:black">Seleccione los datos que quiere hacer privados:</h2>
+							<form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+								{{form.as_p}}
+							<input type="submit" class="action" value="Guardar"></a>
+                      	</div>
+                    </main>
+                    <nav id="sidebar">
+                        <div class="widget">
+                            <ul>
+                            <a href="../../" class="action">Inicio</a><br>
+                            <br><a href="/ver_perfil/" class="action">Ver Perfil</a><br>
+                            <br><a href="/editar_perfil/" class="action">Editar Perfil</a><br>
+                            <br><a href="/cambiar_password/" class="action">Cambiar Password</a><br>
+                            <br><a href="/fotos/subir_foto/" class="action">Subir Foto</a><br>
+                            <br><a href="/fotos/buscar_foto/" class="action">Buscar Fotos</a><br>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="clr"></div>
+                </div>
+            </div>
+
+            <div id="block_inf">
+                <div id="block_inf-inner">
+                  <h4>FotoLink&reg - Copyright&copy Todos los derechos reservados 2015-2065.</h4>
+                </div>
+            </div>
+        </div>
+        </div>
+    </body>
+</html>

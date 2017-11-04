@@ -1,0 +1,76 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+   <style type="text/css">
+   	#content-inner4 { margin:3% 0 0 0;}
+   	#content-inner4 img { margin:3% 0 0 0; height: auto; width: auto; max-width: 100%; max-height:100%}
+   	#content-inner4 #etiquetas { margin:3% 0 0 0; background-color: rgba(0,0,0, 0.1);}
+   	#eti_button { margin:3% 0 0 25%;}
+	#header-inner {margin:0; padding:0; height:100%;}
+    #top-nav { margin:0; padding: 5% 0px 0px 0px; height:100px;}
+    #top-nav ul { list-style:none; padding:0; height:37px;}
+    #top-nav ul { margin:0 5% 0 0; padding:0 0 0 8px; }
+    #top-nav ul a { margin:10% 0 0 0; }
+   </style>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <title>Foto seleccionada</title>
+   </head>
+
+   <body>
+      <div id="fondo">
+      <div id="page">
+      <header id="header">
+         <div id="header-inner">
+          <div id="logo">
+            <img src="{% static 'css/img/LogoPNG.png' %}" alt="FotoLogo" width="300" height="120"/>
+          </div>
+          <div id="top-nav">
+              <ul>
+                  <a href="../../../" class="action">Inicio</a>
+                  <a href="/confirm_logout/" class="action">Log Out</a>
+              </ul>
+          </div>
+       </div>
+         <br>
+         <div class="block_sup">
+            <div class="block_sup-inner">
+                  <h2 style="margin-left:1em">Foto seleccionada</h2>
+            </div>
+         </div>
+      </header>
+      <div id="content" align="center">
+         <div id="content-inner4">
+          <div id="image">
+			   <img src="{{ MEDIA_URL_FOTO }}{{ foto.imagen.url }}"/>
+       </div>
+			{% if etiquetas %}
+			<div id="etiquetas" class="login">
+				<h2 style="color:black">Etiquetados:</h2>
+			{% endif %}
+			{% for etiqueta in etiquetas %}
+    				<a href="{% url 'fotos:mostrar_perfil' etiqueta.nombre %}" style="font-size:20px;color:black; margin-left:1em">{{ etiqueta.nombre }}</a>
+			{% endfor %}	
+   			{% if etiquetas %}
+   			</div>
+			{% endif %}   			
+   			<div id="eti_button">
+			<ul><a href="{% url 'fotos:etiquetar_foto' foto.id %}" class="action" style="float:left;margin:0% 0 2% 0">Etiquetarse</a>
+            <a href="/fotos/buscar_foto/" class="action" style="float:left;margin:0 0 0 4%">Buscar Foto</a>
+            </ul>
+            </div>
+         </div>
+       </div>
+       <br><br><br>
+        <div id="block_inf">
+            <div id="block_inf-inner">
+                <h4>FotoLink&reg - Copyright&copy Todos los derechos reservados 2015-2065.</h4>
+            </div>
+        </div>
+      </div>
+    </div>
+   </body>
+</html>
