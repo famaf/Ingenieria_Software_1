@@ -15,7 +15,7 @@ A partir de ese momento podra subir sus fotografias, etiquetarse en otras fotos,
 #### Instalar las siguientes dependencias, en un sistema basado en Debian (como Ubuntu), se puede hacer:
 
     ```
-    $ sudo apt-get install git libxml2-dev libxslt1-dev python-pip python-dev virtualenv
+        $ sudo apt-get install git libxml2-dev libxslt1-dev python-pip python-dev virtualenv
     ```
 
 #### Crear y activar un nuevo [virtualenv](https://virtualenv.pypa.io/en/stable/). Recomiendo usar [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/). Se puede instalar así:
@@ -81,7 +81,7 @@ A partir de ese momento podra subir sus fotografias, etiquetarse en otras fotos,
 Para correr los test de Fotolink
 
     ```
-        $ cd potatoe/src/FotoLink/
+        $ cd Potatoe/src/FotoLink/
         $ python manage.py test
     ```
 
