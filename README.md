@@ -14,76 +14,60 @@ A partir de ese momento podra subir sus fotografias, etiquetarse en otras fotos,
 
 #### Instalar las siguientes dependencias, en un sistema basado en Debian (como Ubuntu), se puede hacer:
 
-    ```
-        $ sudo apt-get install git libxml2-dev libxslt1-dev python-pip python-dev virtualenv
-    ```
+    $ sudo apt-get install git libxml2-dev libxslt1-dev python-pip python-dev virtualenv
 
 #### Crear y activar un nuevo [virtualenv](https://virtualenv.pypa.io/en/stable/). Recomiendo usar [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/). Se puede instalar así:
-    ```
-        $ sudo pip install virtualenvwrapper
-    ```
 
-    Y luego agregando la siguiente línea al final del archivo `.bashrc`:
+    $ sudo pip install virtualenvwrapper
 
-        [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh"
+Y luego agregando la siguiente línea al final del archivo `.bashrc`:
 
-    Para crear y activar nuestro virtualenv:
+    export WORKON_HOME=$HOME/.virtualenvs
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+    [[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh"
 
-        $ mkvirtualenv --system-site-packages fotolink
+Para crear y activar nuestro virtualenv:
+
+    $ mkvirtualenv fotolink
 
 #### Clonar el repositorio:
 
-    ```
-        $ git clone https://github.com/marioferreyra/Potatoe.git
-    ```
+    $ git clone https://github.com/marioferreyra/Potatoe.git
 
 #### Instalarlo:
 
-    ```
-        $ cd Potatoe/src/FotoLink/env_install
-        $ pip install -r requirements.txt
-    ```
+    $ cd Potatoe/src/FotoLink/env_install
+    $ pip install -r requirements.txt
 
 #### Activar el entorno virtual:
 
-      ```
-          $ workon fotolink
-      ```
+    $ workon fotolink
 
 #### Generar y llenar la base de datos:
 
-      ```
-          $ python manage.py migrate
-      ```
+    $ python manage.py migrate
 
 
 #### Activar el server local:
 
-      ```
-          $ python manage.py runserver
-      ```
+    $ python manage.py runserver
 
 #### Luego en el navegador podras acceder a FotoLink:
 
-      ```
-          http://127.0.0.1:8000/
-          ó
-          http://localhost:8000/
-      ```
+    http://127.0.0.1:8000/
+    ó
+    http://localhost:8000/
 
 #### Desactivar el entorno virtual
 
-      ```
-          $ deactivate
-      ```
+    $ deactivate
 
 ## Test, Test and more Test
 Para correr los test de Fotolink
 
-    ```
-        $ cd Potatoe/src/FotoLink/
-        $ python manage.py test
-    ```
+    $ cd Potatoe/src/FotoLink/
+    $ python manage.py test
 
 ## Contribuyendo con Potatoe
 
